@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C98F3A"/><stop offset="50%" stop-color="#E8B65A"/><stop offset="100%" stop-color="#F6D79B"/>
+    </linearGradient>
+    <linearGradient id="v" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C3ABF8"/><stop offset="100%" stop-color="#8E6EE6"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="40" width="820" height="820" rx="190" fill="none" stroke="url(#g)" stroke-width="30"/>
+  <!-- rising measure: from error to rule (right-to-left, as Arabic reads) -->
+  <rect x="610" y="548" width="78" height="150" rx="39" fill="url(#g)" opacity="0.42"/>
+  <rect x="490" y="470" width="78" height="228" rx="39" fill="url(#g)" opacity="0.66"/>
+  <rect x="370" y="372" width="78" height="326" rx="39" fill="url(#g)"/>
+  <rect x="250" y="250" width="78" height="448" rx="39" fill="url(#v)"/>
+  <!-- the nuqta: the mark that makes a letter legible -->
+  <circle cx="289" cy="152" r="44" fill="url(#g)"/>
+  <!-- baseline -->
+  <rect x="236" y="744" width="452" height="26" rx="13" fill="url(#g)" opacity="0.85"/>
+</svg>

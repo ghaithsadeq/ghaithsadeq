@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مُبين — محرّك العربية التشخيصي</title>
+<meta name="description" content="مُبين: محرّك تشخيص لغويّ عربيّ يعمل داخل المتصفّح بلا إنترنت وبلا خادم. يشرح القاعدة وراء كلّ خطأ، ويبني بصمة لغوية لكلّ طالب، ويمنحه نقاطاً وأوسمة وشهادات.">
+<meta property="og:title" content="مُبين — محرّك العربية التشخيصي">
+<meta property="og:description" content="يُبيِّن لك قاعدة خطئك قبل أن يتكرّر. يعمل بلا إنترنت، ونصّ الطالب لا يغادر جهازه.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logos/mubeen-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0F; --ink2:#101019; --surface:#15151F; --surface2:#1C1C28;
+  --line:#2A2A3A; --line2:#383850; --txt:#EDEAE4; --txt2:#A5A2B0; --txt3:#6E6B7D;
+  --gold:#E8B65A; --rose:#F2707A; --emer:#43D9A3; --viol:#A98BF5; --sky:#5FB8F0; --xp:#F0A94C;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1100px 620px at 88% -8%, rgba(232,182,90,.10), transparent 62%),
+    radial-gradient(900px 560px at 4% 104%, rgba(169,139,245,.10), transparent 60%),
+    var(--ink);
+  color:var(--txt);
+  font-family:'Tajawal','Dubai','Segoe UI','Noto Sans Arabic',system-ui,sans-serif;
+  font-size:16px; line-height:1.85; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+.serif{font-family:'Amiri','Sakkal Majalla','Traditional Arabic',serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ===== شريط علويّ ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,15,.86);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:16px;padding:13px 22px}
+.nav .lg{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px}
+.nav .lg img{width:31px;height:31px}
+.nav .lg span{font-size:11px;font-weight:400;color:var(--txt3);border-right:1px solid var(--line2);
+  padding-right:10px;margin-right:3px}
+.nav .sp{flex:1}
+.nav a.lk{color:var(--txt2);font-size:14px;font-weight:600;transition:.2s var(--ease)}
+.nav a.lk:hover{color:var(--gold)}
+@media(max-width:720px){.nav a.lk{display:none}.nav .lg span{display:none}}
+
+/* ===== أزرار ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:13px;
+  font-weight:700;font-size:15px;border:1px solid var(--line2);background:var(--surface2);
+  color:var(--txt);transition:.25s var(--ease);cursor:pointer}
+.btn:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.btn-main{background:linear-gradient(100deg,var(--gold),#F0C877);color:#17120A;border:none}
+.btn-main:hover{color:#17120A;filter:brightness(1.08);box-shadow:0 12px 34px rgba(232,182,90,.3)}
+.btn-sm{padding:9px 17px;font-size:13.5px;border-radius:10px}
+
+/* ===== البطل ===== */
+.hero{padding:84px 0 70px;text-align:center;position:relative;overflow:hidden}
+.hero img.mark{width:104px;height:104px;filter:drop-shadow(0 10px 34px rgba(232,182,90,.3));
+  animation:up .9s var(--ease) both}
+.hero h1{font-size:clamp(46px,9vw,82px);font-weight:800;letter-spacing:-2px;line-height:1.18;margin:14px 0 6px;
+  background:linear-gradient(100deg,#fff 12%,var(--gold) 55%,var(--viol) 96%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:up .9s .08s var(--ease) both;padding-bottom:6px}
+.hero .tag{color:var(--gold);font-size:clamp(17px,3.4vw,21px);font-weight:500;
+  animation:up .9s .16s var(--ease) both}
+.hero p.lead{max-width:680px;margin:18px auto 0;color:var(--txt2);font-size:clamp(15px,2.6vw,18px);
+  animation:up .9s .24s var(--ease) both}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px;
+  animation:up .9s .32s var(--ease) both}
+.hero .facts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px;
+  animation:up .9s .4s var(--ease) both}
+.fact{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:9px 16px;font-size:13px}
+.fact b{color:var(--gold)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ===== أقسام ===== */
+section{padding:62px 0}
+h2.st{font-size:clamp(27px,5vw,38px);font-weight:800;letter-spacing:-.8px;margin-bottom:10px;line-height:1.4}
+p.ss{color:var(--txt2);max-width:760px;margin-bottom:34px;font-size:15.5px}
+.grid{display:grid;gap:17px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;
+  transition:.3s var(--ease)}
+.card:hover{transform:translateY(-5px);border-color:var(--line2);box-shadow:0 18px 50px rgba(0,0,0,.42)}
+.card .ic{font-size:30px;line-height:1;margin-bottom:12px;display:block}
+.card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.card p{color:var(--txt2);font-size:14px}
+
+/* ===== المشكلة/الحلّ ===== */
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center}
+@media(max-width:860px){.vs{grid-template-columns:1fr}.vs .arw{transform:rotate(90deg)}}
+.vs .arw{font-size:30px;color:var(--gold)}
+.box{border-radius:18px;padding:24px;border:1px solid}
+.box.bad{border-color:rgba(242,112,122,.38);background:rgba(242,112,122,.06)}
+.box.good{border-color:rgba(67,217,163,.38);background:rgba(67,217,163,.06)}
+.box h3{font-size:17px;margin-bottom:12px}
+.box.bad h3{color:var(--rose)} .box.good h3{color:var(--emer)}
+.box li{list-style:none;padding:7px 0;font-size:14.3px;color:var(--txt2);
+  border-bottom:1px solid rgba(255,255,255,.05)}
+.box li:last-child{border-bottom:none}
+
+/* ===== المكافآت ===== */
+.levels{display:flex;gap:11px;flex-wrap:wrap;margin-top:8px}
+.lvl{flex:1;min-width:132px;border:1px solid var(--line);border-radius:15px;padding:16px 12px;
+  text-align:center;background:var(--surface2);transition:.3s var(--ease)}
+.lvl:hover{transform:translateY(-4px);border-color:var(--gold)}
+.lvl .e{font-size:28px;display:block;margin-bottom:7px}
+.lvl b{display:block;font-size:13.5px;margin-bottom:3px}
+.lvl span{font-size:11.5px;color:var(--txt3)}
+.meds{display:flex;gap:11px;flex-wrap:wrap;margin-top:16px}
+.med{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:13px;
+  padding:11px 16px;background:var(--surface2);font-size:13.5px}
+.med .m{font-size:23px}
+
+/* ===== خصوصيّة ===== */
+.priv{border:1px solid rgba(67,217,163,.3);background:rgba(67,217,163,.05);border-radius:20px;padding:30px}
+.priv h2{font-size:25px;margin-bottom:12px;color:var(--emer)}
+.priv p{color:var(--txt2);max-width:820px;font-size:15px}
+
+/* ===== التذييل ===== */
+footer{border-top:1px solid var(--line);padding:42px 0 30px;text-align:center;color:var(--txt3);font-size:13px}
+.orgs{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.orgs img{height:42px;border-radius:8px;background:#fff;padding:5px 9px}
+footer .team{color:var(--txt2);font-size:13.5px;margin-bottom:6px}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="lg" href="#"><img src="assets/logos/mubeen-logo.svg" alt="شعار مُبين"><b class="serif">مُبين</b><span>محرّك العربية التشخيصي</span></a>
+  <div class="sp"></div>
+  <a class="lk" href="#how">كيف يعمل</a>
+  <a class="lk" href="#rewards">المكافآت</a>
+  <a class="lk" href="#privacy">الخصوصيّة</a>
+  <a class="btn btn-sm btn-main" href="app/mubeen.html">افتح التطبيق</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <img class="mark" src="assets/logos/mubeen-logo.svg" alt="شعار مُبين">
+  <h1 class="serif">مُبين</h1>
+  <div class="tag">يُبيِّن لك قاعدة خطئك قبل أن يتكرّر</div>
+  <p class="lead">
+    محرّك تشخيص لغويّ عربيّ يعمل <b>داخل متصفّحك</b>. يقرأ النصّ، ويرصد عشر عائلات من الأخطاء،
+    ويشرح <b>القاعدة وراء كلّ خطأ</b> بدل أن يضع خطّاً أحمر فقط — ثم يكافئك على كلّ خطوة تتقدّمها.
+  </p>
+  <div class="cta">
+    <a class="btn btn-main" href="app/mubeen.html">⚡ جرّبه الآن — بلا تسجيل</a>
+    <a class="btn" href="guide/index.html">📘 دليل المستخدم</a>
+  </div>
+  <div class="facts">
+    <div class="fact">بلا إنترنت · <b>صفر</b> طلب شبكة</div>
+    <div class="fact">بلا خادم · <b>صفر</b> حساب</div>
+    <div class="fact"><b>٥٠٤</b> مدخلاً في بنوك القواعد</div>
+    <div class="fact"><b>١٠</b> عائلات أخطاء</div>
+    <div class="fact">ملفّ <b>واحد</b> يعمل بالنقر المزدوج</div>
+  </div>
+</div></header>
+
+<section id="problem"><div class="wrap">
+  <h2 class="st">المشكلة ليست نقص التصحيح — بل أنّ التصحيح لا يُعلِّم</h2>
+  <p class="ss">الطالب يرى الخطّ الأحمر ولا يرى السبب، فيتكرّر الخطأ نفسه في النصّ التالي. حصرنا المشكلة في حلقة واحدة قابلة للمعالجة برمجيّاً: حلقة التغذية الراجعة بين الطالب وخطئه.</p>
+  <div class="vs">
+    <div class="box bad">
+      <h3>✗ الحلقة المكسورة اليوم</h3>
+      <ul>
+        <li><b>زمن:</b> التصحيح اليدويّ بطيء، فتصل الملاحظة بعد أن ينسى الطالب سياق كتابته.</li>
+        <li><b>عمق:</b> الملاحظة تقول «خطأ» ولا تقول «لماذا»، فلا تُبنى قاعدة في الذهن.</li>
+        <li><b>تتبّع:</b> لا أحد يعرف أهذا أوّل مرّة أم العاشرة، فلا تُرصد الأنماط.</li>
+        <li><b>خصوصيّة:</b> الأدوات المتاحة تطلب رفع نصّ الطالب إلى خوادم خارجية.</li>
+      </ul>
+    </div>
+    <div class="arw">⟵</div>
+    <div class="box good">
+      <h3>✓ ما يفعله مُبين</h3>
+      <ul>
+        <li><b>فوريّ:</b> التشخيص أثناء الكتابة، في أجزاء من الثانية.</li>
+        <li><b>مُفسِّر:</b> لكلّ خطأ قاعدته ودرجة ثقته، لا مجرّد تعليم عليه.</li>
+        <li><b>متتبِّع:</b> بصمة لغوية لكلّ طالب تُظهر أضعف عائلاته وتطوّره.</li>
+        <li><b>محليّ:</b> النصّ لا يغادر الجهاز إطلاقاً — قرار تصميميّ لا قيد ميزانية.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <h2 class="st">ماذا يقدّم؟</h2>
+  <p class="ss">أربع واجهات بأربعة أدوار: الطالب، والمعلّم، وقيادة المدرسة، ووضع المعرض.</p>
+  <div class="grid g3">
+    <div class="card"><span class="ic">✍️</span><h3>المُحلِّل اللغويّ</h3>
+      <p>اكتب أو الصق نصّاً، فيُلوَّن كلّ خطأ بحسب عائلته. اضغط عليه لترى القاعدة، والصواب، ودرجة الثقة.</p></div>
+    <div class="card"><span class="ic">🧬</span><h3>البصمة اللغوية</h3>
+      <p>خريطة إتقان لعشر عائلات قواعد، ومؤشّر بيان من ١٠٠، ومسار تطوّرك. لا نقارنك بغيرك — نقارنك بنفسك.</p></div>
+    <div class="card"><span class="ic">🎯</span><h3>تدريب مُولَّد من أخطائك</h3>
+      <p>التمارين ليست عامّة: تُولَّد من أضعف عائلاتك أنت. لا تمرين على ما تتقنه أصلاً.</p></div>
+    <div class="card"><span class="ic">🌉</span><h3>جسر الفصحى</h3>
+      <p>معجم شامي وخليجي ومصري يرصد التسرّب العامّي في الكتابة المدرسيّة ويعطي مقابله الفصيح فوراً.</p></div>
+    <div class="card"><span class="ic">👥</span><h3>لوحة الصفّ والدرس المُولَّد</h3>
+      <p>خريطة حرارية لكلّ طالب في كلّ عائلة، وخطّة حصّة عشر دقائق تُبنى تلقائيّاً من أخطاء الصفّ الفعليّة.</p></div>
+    <div class="card"><span class="ic">🏫</span><h3>نظرة المدرسة</h3>
+      <p>أرقام تشغيل مُقاسة حيّاً أمام اللجنة بزرّ واحد، ونطاق معلن بحدوده صراحةً.</p></div>
+  </div>
+</div></section>
+
+<section id="rewards"><div class="wrap">
+  <h2 class="st">🏅 نظام المكافآت والشهادات</h2>
+  <p class="ss">
+    كلّ نقطة مكسوبة بعمل حقيقيّ داخل التطبيق، وجدول الاحتساب معروض كاملاً للطالب — لا نقاط مجّانيّة ولا أرقام مزخرفة.
+    سبع مراتب، واثنا عشر وساماً، وأربع شهادات تُرسَم داخل المتصفّح وتُصدَّر صورة جاهزة للطباعة.
+  </p>
+  <div class="levels">
+    <div class="lvl"><span class="e">🌱</span><b>مُستكشِف الحروف</b><span>٠ نقطة</span></div>
+    <div class="lvl"><span class="e">✏️</span><b>كاتبٌ مُبتدئ</b><span>١٢٠ نقطة</span></div>
+    <div class="lvl"><span class="e">🛡️</span><b>ضابطُ الإملاء</b><span>٣٢٠ نقطة</span></div>
+    <div class="lvl"><span class="e">⚔️</span><b>حارسُ الضاد</b><span>٦٤٠ نقطة</span></div>
+    <div class="lvl"><span class="e">📐</span><b>نحويٌّ واعد</b><span>١١٠٠ نقطة</span></div>
+    <div class="lvl"><span class="e">🏅</span><b>بليغٌ مُتمكِّن</b><span>١٧٠٠ نقطة</span></div>
+    <div class="lvl"><span class="e">👑</span><b>فارسُ البيان</b><span>٢٥٠٠ نقطة</span></div>
+  </div>
+  <div class="meds">
+    <div class="med"><span class="m">🥉</span> شهادة برونزيّة</div>
+    <div class="med"><span class="m">🥈</span> شهادة فضّيّة</div>
+    <div class="med"><span class="m">🥇</span> شهادة ذهبيّة</div>
+    <div class="med"><span class="m">💎</span> شهادة ماسيّة</div>
+  </div>
+  <div class="grid g3" style="margin-top:26px">
+    <div class="card"><span class="ic">⭐</span><h3>نقاط فوريّة</h3>
+      <p>كلّ إجابة صحيحة عشر نقاط، وتتضاعف مع سلسلة الإجابات المتتالية. ومكافأة إضافيّة لجولة كاملة بلا خطأ.</p></div>
+    <div class="card"><span class="ic">🎖️</span><h3>أوسمة بشروط معلنة</h3>
+      <p>الوسام المغلق يُظهر شرطه وتقدّمك نحوه — لا شيء مخفيّ. «قاهر الضاد»، «لا يُقهَر»، «مِئة إصابة» وغيرها.</p></div>
+    <div class="card"><span class="ic">📜</span><h3>شهادة قابلة للمشاركة</h3>
+      <p>تُرسَم SVG داخل متصفّحك، وتُصدَّر PNG بدقّة عالية، ولها رقم تحقّق مشتقّ من اسمك ومرتبتها وتاريخها.</p></div>
+  </div>
+  <p class="ss" style="margin-top:22px;font-size:14px">
+    <b>بصراحة:</b> شهادة مُبين <b>تقديريّة داخل التطبيق</b> — تُثبت جهداً بُذل في التدريب، وليست وثيقة رسميّة صادرة عن جهة تعليميّة.
+    قلناها صراحةً لأنّ الوضوح أبقى من التهويل.
+  </p>
+</div></section>
+
+<section id="privacy"><div class="wrap">
+  <div class="priv">
+    <h2>🔒 نصّ الطالب لا يغادر جهازه</h2>
+    <p>
+      لا خادم، ولا حساب، ولا مفتاح واجهة برمجية، ولا مكتبة خارجية واحدة. ملفّ HTML واحد يعمل بالنقر المزدوج
+      على أيّ متصفّح وفي أيّ قاعة بلا إنترنت. النقاط والأوسمة والشهادات تُحفظ في متصفّح الجهاز وحده
+      (<span dir="ltr">localStorage</span>)، ولا تُرسَل إلى أيّ مكان، ولا تُقارَن بأحد.
+      وهذا ليس قيد ميزانية — بل قرار تصميميّ يزيل أكبر عائق مؤسّسيّ أمام استعمال الأداة في المدارس.
+    </p>
+    <div style="margin-top:20px;display:flex;gap:11px;flex-wrap:wrap">
+      <a class="btn btn-main" href="app/mubeen.html">افتح التطبيق</a>
+      <a class="btn" href="docs/">📂 المستندات التقنيّة</a>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="orgs">
+    <img src="assets/logos/hackathon.png" alt="الهاكاثون الطلابي الأول — للعربية نبتكر">
+    <img src="assets/logos/spea.png" alt="هيئة الشارقة للتعليم الخاص">
+    <img src="assets/logos/edufikra.png" alt="إدو فكرة">
+  </div>
+  <div class="team"><b>GEN CODE TEAM</b> — غيث صادق · أحمد حمد · تيم عامر</div>
+  <div>مدرسة السدرة الخاصة، كلباء — إمارة الشارقة</div>
+  <div>الهاكاثون الطلابي الأوّل «للعربية نبتكر» · هيئة الشارقة للتعليم الخاص بالتعاون مع «إدو فكرة»</div>
+</div></footer>
+
+</body>
+</html>

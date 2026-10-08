@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل المستخدم — مُبين</title>
+<meta name="description" content="دليل استخدام مُبين خطوة بخطوة: التشغيل، الأدوار الأربعة، نظام النقاط والأوسمة، إصدار الشهادات ومشاركتها، والاختصارات.">
+<link rel="icon" href="../assets/logos/mubeen-logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0F; --surface:#15151F; --surface2:#1C1C28; --line:#2A2A3A; --line2:#383850;
+  --txt:#EDEAE4; --txt2:#A5A2B0; --txt3:#6E6B7D;
+  --gold:#E8B65A; --rose:#F2707A; --emer:#43D9A3; --viol:#A98BF5; --xp:#F0A94C;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(900px 500px at 92% -6%, rgba(232,182,90,.08), transparent 60%), var(--ink);
+  color:var(--txt);font-family:'Tajawal','Dubai','Segoe UI',system-ui,sans-serif;
+  font-size:16px;line-height:1.95;-webkit-font-smoothing:antialiased;
+}
+.serif{font-family:'Amiri','Sakkal Majalla',serif}
+a{color:var(--gold)}
+.page{max-width:1120px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:230px 1fr;gap:34px}
+@media(max-width:900px){.page{grid-template-columns:1fr;gap:0}aside{position:static!important;max-height:none!important;margin-bottom:22px}}
+
+/* رأس */
+header.hd{border-bottom:1px solid var(--line);margin-bottom:30px;
+  background:rgba(10,10,15,.9);backdrop-filter:blur(14px)}
+header.hd .in{max-width:1120px;margin:0 auto;padding:16px 22px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+header.hd img{width:34px;height:34px}
+header.hd b{font-size:21px}
+header.hd .t{font-size:12px;color:var(--txt3);border-right:1px solid var(--line2);padding-right:11px}
+header.hd .sp{flex:1}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 17px;border-radius:11px;font-weight:700;
+  font-size:13.5px;border:1px solid var(--line2);background:var(--surface2);color:var(--txt);
+  text-decoration:none;transition:.22s}
+.btn:hover{border-color:var(--gold);color:var(--gold)}
+.btn-main{background:linear-gradient(100deg,var(--gold),#F0C877);color:#17120A;border:none}
+.btn-main:hover{color:#17120A;filter:brightness(1.08)}
+
+/* فهرس جانبيّ */
+aside{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 110px);overflow-y:auto;
+  border:1px solid var(--line);border-radius:15px;padding:16px;background:var(--surface)}
+aside h4{font-size:12px;color:var(--txt3);letter-spacing:1px;margin-bottom:10px}
+aside a{display:block;padding:6px 9px;border-radius:8px;font-size:13.5px;color:var(--txt2);
+  text-decoration:none;transition:.2s}
+aside a:hover{background:var(--surface2);color:var(--gold)}
+
+/* محتوى */
+main{padding-bottom:70px;min-width:0}
+h1{font-size:clamp(32px,6vw,46px);font-weight:800;letter-spacing:-1.2px;line-height:1.35;margin-bottom:8px;
+  background:linear-gradient(100deg,#fff,var(--gold) 62%,var(--viol));
+  -webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:4px}
+.sub{color:var(--txt2);font-size:16px;margin-bottom:30px}
+h2{font-size:25px;font-weight:800;margin:40px 0 12px;padding-top:12px;border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;line-height:1.5}
+h2:first-of-type{border-top:none;margin-top:16px}
+h3{font-size:17.5px;font-weight:700;margin:22px 0 9px;color:var(--gold)}
+p{margin-bottom:13px;color:var(--txt2)}
+p strong,li strong{color:var(--txt)}
+ol,ul{margin:0 20px 15px 0;color:var(--txt2)}
+li{margin-bottom:8px}
+.step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.step .n{flex-shrink:0;width:31px;height:31px;border-radius:10px;background:var(--surface2);
+  border:1px solid var(--line2);display:grid;place-items:center;font-weight:800;color:var(--gold);font-size:14px}
+.step .c{flex:1;min-width:0}
+.step .c b{display:block;margin-bottom:2px;color:var(--txt)}
+.step .c span{font-size:14px;color:var(--txt2)}
+.note{border-right:3px solid var(--gold);background:rgba(232,182,90,.07);padding:13px 17px;
+  border-radius:0 11px 11px 0;margin:16px 0;font-size:14.3px;color:var(--txt2)}
+.note.ok{border-color:var(--emer);background:rgba(67,217,163,.07)}
+.note.warn{border-color:var(--rose);background:rgba(242,112,122,.07)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:right}
+th{background:var(--surface2);font-weight:700;font-size:13px;color:var(--txt)}
+td{color:var(--txt2)}
+kbd{display:inline-block;padding:2px 8px;border-radius:6px;border:1px solid var(--line2);
+  background:var(--surface2);font-size:12.5px;font-family:inherit;color:var(--gold);margin:0 2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px;margin:16px 0}
+.c{border:1px solid var(--line);border-radius:14px;padding:17px;background:var(--surface)}
+.c .e{font-size:26px;display:block;margin-bottom:8px}
+.c b{display:block;margin-bottom:5px;font-size:15px}
+.c span{font-size:13px;color:var(--txt2);line-height:1.75}
+footer{border-top:1px solid var(--line);padding:28px 22px;text-align:center;color:var(--txt3);font-size:12.5px;margin-top:40px}
+
+@media print{
+  body{background:#fff;color:#111}
+  header.hd,aside,.btn{display:none!important}
+  .page{grid-template-columns:1fr;padding:0}
+  h1,h2,h3{color:#8A6A1F!important;-webkit-text-fill-color:#8A6A1F}
+  p,td,li,.c span{color:#333}
+  .c,table,th,td{border-color:#CCC}
+  @page{size:A4;margin:1.6cm}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hd"><div class="in">
+  <img src="../assets/logos/mubeen-logo.svg" alt="شعار مُبين">
+  <b class="serif">مُبين</b><span class="t">دليل المستخدم</span>
+  <div class="sp"></div>
+  <a class="btn" href="../index.html">الصفحة الرئيسة</a>
+  <a class="btn btn-main" href="../app/mubeen.html">افتح التطبيق</a>
+</div></header>
+
+<div class="page">
+<aside>
+  <h4>محتويات الدليل</h4>
+  <a href="#run">١ · التشغيل في دقيقة</a>
+  <a href="#roles">٢ · الأدوار الأربعة</a>
+  <a href="#analyzer">٣ · المُحلِّل</a>
+  <a href="#print">٤ · البصمة اللغوية</a>
+  <a href="#train">٥ · التدريب</a>
+  <a href="#points">٦ · النقاط والمراتب</a>
+  <a href="#badges">٧ · الأوسمة</a>
+  <a href="#certs">٨ · الشهادات ومشاركتها</a>
+  <a href="#teacher">٩ · واجهة المعلّم</a>
+  <a href="#booth">١٠ · وضع المعرض</a>
+  <a href="#keys">١١ · الاختصارات</a>
+  <a href="#faq">١٢ · أسئلة شائعة</a>
+</aside>
+
+<main>
+<h1>دليل المستخدم</h1>
+<p class="sub">كلّ ما تحتاجه لتشغيل «مُبين» واستعماله — خطوة بخطوة، للطالب والمعلّم وفريق المعرض.</p>
+
+<h2 id="run">١ · التشغيل في دقيقة</h2>
+<div class="step"><div class="n">١</div><div class="c"><b>افتح الملفّ</b>
+  <span>انقر نقراً مزدوجاً على <code>app/mubeen.html</code>. سيفتح في متصفّحك مباشرة.</span></div></div>
+<div class="step"><div class="n">٢</div><div class="c"><b>لا تحتاج إنترنت</b>
+  <span>المحرّك كلّه داخل الملفّ. الإنترنت يُحسّن الخطوط فقط، ولا يلزم لعمل التطبيق.</span></div></div>
+<div class="step"><div class="n">٣</div><div class="c"><b>لا تسجيل ولا حساب</b>
+  <span>تبدأ فوراً. بياناتك تُحفظ في متصفّح هذا الجهاز وحده.</span></div></div>
+<div class="step"><div class="n">٤</div><div class="c"><b>اكتب جملة</b>
+  <span>من قسم «المُحلِّل»، اكتب أو الصق نصّاً عربيّاً — يبدأ التشخيص أثناء كتابتك.</span></div></div>
+
+<div class="note ok"><b>أفضل المتصفّحات:</b> كروم، إيدج، سفاري، فايرفوكس — بأيّ إصدار حديث.
+يعمل على الحاسوب واللوحيّ والهاتف.</div>
+
+<h2 id="roles">٢ · الأدوار الأربعة</h2>
+<p>في أعلى الشاشة شريط يبدّل بين أربعة أدوار، لكلٍّ منها أقسامه:</p>
+<div class="cards">
+  <div class="c"><span class="e">🎓</span><b>الطالب</b><span>المُحلِّل · البصمة · التدريب · الإنجازات · الشهادات · جسر الفصحى</span></div>
+  <div class="c"><span class="e">👩‍🏫</span><b>المعلّم</b><span>المُحلِّل · لوحة الصفّ · الدرس المُولَّد · جسر الفصحى</span></div>
+  <div class="c"><span class="e">🏫</span><b>القيادة</b><span>نظرة المدرسة · الأثر · أرقام التشغيل · النطاق والحدود</span></div>
+  <div class="c"><span class="e">🏆</span><b>وضع المعرض</b><span>شاشة واحدة كبيرة يكتب فيها الزائر جملته ويرى تشخيصها فوراً</span></div>
+</div>
+
+<h2 id="analyzer">٣ · المُحلِّل اللغويّ</h2>
+<ol>
+  <li>اكتب نصّك في المربّع، أو اضغط إحدى العيّنات الجاهزة فوقه.</li>
+  <li>يُلوَّن كلّ خطأ بلون عائلته: <strong style="color:var(--rose)">الإملاء</strong>،
+      <strong style="color:#5FB8F0">النحو</strong>، <strong style="color:var(--viol)">العاميّة</strong>،
+      <strong style="color:var(--txt3)">الترقيم والأسلوب</strong>.</li>
+  <li><strong>اضغط على أيّ كلمة ملوّنة</strong> لينتقل بك إلى بطاقة القاعدة الموافقة لها.</li>
+  <li>كلّ بطاقة تعرض: الخطأ ← الصواب، والقاعدة اللغويّة، و<strong>درجة الثقة</strong> (مؤكد / مرجّح).</li>
+  <li>زرّ <strong>«أصلح الكلّ»</strong> يستبدل الأخطاء المؤكّدة الإملائيّة فقط — ويترك ما كان مرجّحاً لك.</li>
+  <li>زرّ <strong>«تصدير»</strong> ينزّل تقريراً نصّيّاً بالتشخيص كاملاً.</li>
+</ol>
+<div class="note"><b>لماذا «مرجّح»؟</b> لأنّ بعض الصور صحيحة في سياق وخاطئة في آخر.
+مثلاً «كتابه» صواب إن كانت الهاء ضميراً (كتابُ هُو)، وخطأ إن أردت «كتابة».
+مُبين يقول لك ذلك بدل أن يجزم بما لا يُجزم به.</div>
+
+<h2 id="print">٤ · البصمة اللغوية</h2>
+<p>خريطة إتقانك في عشر عائلات قواعد، و<strong>مؤشّر البيان</strong> من ١٠٠، ومسار تطوّرك بين نصوصك.
+أسفلها «أولويّاتك الثلاث» — ابدأ بالأولى، فتحسّنها وحده يرفع مؤشّرك أكثر من غيره.</p>
+<table>
+  <tr><th>المؤشّر</th><th>المستوى</th></tr>
+  <tr><td>٨٥ فأعلى</td><td>مُتمكّن</td></tr>
+  <tr><td>٧٠ – ٨٤</td><td>جيّد</td></tr>
+  <tr><td>٥٠ – ٦٩</td><td>يحتاج تدريباً</td></tr>
+  <tr><td>أقلّ من ٥٠</td><td>أولويّة تدخّل</td></tr>
+</table>
+
+<h2 id="train">٥ · التدريب</h2>
+<p>التمارين ليست عامّة — تُولَّد من <strong>أضعف عائلاتك أنت</strong>. ستّة تمارين في الجولة.</p>
+<ol>
+  <li>اختر الإجابة الصحيحة من ثلاثة خيارات.</li>
+  <li>يظهر التصحيح فوراً مع اسم العائلة، والشريط العلويّ يتقدّم.</li>
+  <li><strong>سلسلتك</strong> ترتفع مع كلّ إجابة صحيحة متتالية، وتصفر عند أوّل خطأ.</li>
+  <li>عند انتهاء الجولة تُمنح مكافأة الإكمال، ومكافأة إضافيّة إن كانت بلا خطأ.</li>
+  <li>زرّ <strong>«🔄 جولة جديدة»</strong> يولّد تمارين أخرى من العائلات نفسها.</li>
+</ol>
+
+<h2 id="points">٦ · النقاط والمراتب</h2>
+<p>جدول الاحتساب كامل ومعروض داخل التطبيق في قسم «إنجازاتي» — لا شيء مخفيّ:</p>
+<table>
+  <tr><th>السبب</th><th>النقاط</th><th>الشرط</th></tr>
+  <tr><td>إجابة صحيحة في التدريب</td><td>+١٠</td><td>من المحاولة الأولى</td></tr>
+  <tr><td>مضاعف السلسلة</td><td>+٢</td><td>عن كلّ إجابة متتالية، بحدّ أقصى ١٠</td></tr>
+  <tr><td>إكمال جولة تدريب</td><td>+٢٥</td><td>عند الإجابة عن تمارين الجولة كلّها</td></tr>
+  <tr><td>جولة كاملة بلا خطأ</td><td>+٤٠</td><td>مكافأة إضافيّة</td></tr>
+  <tr><td>تشخيص نصّ</td><td>+٥</td><td>١٢ كلمة فأكثر · خمس مرّات يوميّاً كحدّ أقصى</td></tr>
+  <tr><td>نصّ بلا ملاحظة واحدة</td><td>+٢٠</td><td>١٥ كلمة فأكثر</td></tr>
+  <tr><td>تحويل عامّيّة إلى فصحى</td><td>+٨</td><td>عند رصد تسرّب فعليّ</td></tr>
+  <tr><td>يوم جديد في السلسلة</td><td>+١٥</td><td>عن كلّ يوم تعود فيه بعد يوم سابق</td></tr>
+</table>
+<p>المراتب السبع: <strong>مُستكشِف الحروف</strong> (٠) ← <strong>كاتبٌ مُبتدئ</strong> (١٢٠) ←
+<strong>ضابطُ الإملاء</strong> (٣٢٠) ← <strong>حارسُ الضاد</strong> (٦٤٠) ←
+<strong>نحويٌّ واعد</strong> (١١٠٠) ← <strong>بليغٌ مُتمكِّن</strong> (١٧٠٠) ←
+<strong>فارسُ البيان</strong> (٢٥٠٠).</p>
+
+<h2 id="badges">٧ · الأوسمة</h2>
+<p>اثنا عشر وساماً. الوسام المغلق يُظهر <strong>شرطه وتقدّمك نحوه</strong>، فتعرف دائماً كم بقي لك.
+منها: «البداية»، «يدٌ نظيفة»، «سبعةٌ على التوالي»، «لا يُقهَر»، «قاهرُ الضاد»، «بَنّاءُ الجسر»،
+«مِئةُ إصابة»، «مُثابِر»، و«مُتمكِّن».</p>
+
+<h2 id="certs">٨ · الشهادات ومشاركتها</h2>
+<p>أربع شهادات تُفتح مع المراتب: <strong>برونزيّة</strong> (٣٢٠ نقطة)، <strong>فضّيّة</strong> (٦٤٠)،
+<strong>ذهبيّة</strong> (١٧٠٠)، <strong>ماسيّة</strong> (٢٥٠٠).</p>
+<div class="step"><div class="n">١</div><div class="c"><b>اكتب اسمك</b>
+  <span>من أعلى صفحة «شهاداتي»، اكتب الاسم كما تريده أن يظهر، ثم «حفظ الاسم».</span></div></div>
+<div class="step"><div class="n">٢</div><div class="c"><b>أصدِر الشهادة</b>
+  <span>اضغط «إصدار» على الشهادة المفتوحة، فتُرسَم أمامك فوراً.</span></div></div>
+<div class="step"><div class="n">٣</div><div class="c"><b>نزّلها أو شاركها</b>
+  <span><strong>PNG</strong> للمشاركة والطباعة العادية · <strong>SVG</strong> للطباعة الكبيرة بلا فقدان جودة ·
+  <strong>مشاركة</strong> تفتح قائمة مشاركة جهازك · <strong>طباعة</strong> مباشرة على A4 أفقيّ ·
+  <strong>نسخ نصّ المشاركة</strong> لتلصقه في منشورك.</span></div></div>
+<div class="note"><b>رقم التحقّق:</b> لكلّ شهادة رقم مشتقّ حسابيّاً من الاسم والمرتبة والتاريخ،
+فأيّ تغيير في أحدها يعطي رقماً مختلفاً.</div>
+<div class="note warn"><b>بصراحة تامّة:</b> شهادة مُبين <b>تقديريّة داخل التطبيق</b>. تُثبت جهداً بُذل في التدريب،
+وليست وثيقة رسميّة صادرة عن جهة تعليميّة. ومع ذلك فهي مرقَّمة ومؤرَّخة وقابلة للطباعة،
+وتصلح أن تُعلَّق في الصفّ أو تُرفَق بملفّ إنجاز الطالب.</div>
+
+<h2 id="teacher">٩ · واجهة المعلّم</h2>
+<ul>
+  <li><strong>لوحة الصفّ:</strong> خريطة حرارية لكلّ طالب في كلّ عائلة، مرتّبة بالأولويّة — من يحتاج تدخّلاً أوّلاً.</li>
+  <li><strong>الدرس المُولَّد:</strong> خطّة حصّة عشر دقائق تُبنى من أخطاء الصفّ الفعليّة، لا من منهج عامّ.
+      قابلة للتنزيل نصّاً أو ملفّ وورد.</li>
+  <li><strong>تصدير البيانات:</strong> ملفّ CSV يفتح في إكسل بكلّ أرقام الصفّ.</li>
+</ul>
+<div class="note"><b>ملاحظة مهمّة:</b> النقاط والأوسمة والشهادات <b>خاصّة بجهاز الطالب</b> ولا تُجمَّع للمعلّم،
+لأنّ شيئاً لا يُرفَع إلى خادم. لوحة الصفّ تعتمد على تحليل النصوص لا على نقاط التحفيز.</div>
+
+<h2 id="booth">١٠ · وضع المعرض</h2>
+<p>شاشة واحدة كبيرة للزوّار: يكتب الزائر جملته، فيرى تشخيصها ومؤشّره في ثانيتين.
+فيها عدّاد للجمل المشخَّصة ولوحة لأعلى المؤشّرات (محليّة في هذا الجهاز فقط).</p>
+<div class="note ok"><b>للفريق:</b> اتركوا هذه الشاشة معروضة طوال الوقت.
+الزائر الذي يكتب بنفسه ويرى النتيجة لا يَنسى الركن. استعملوا <kbd>C</kbd> للوضع النظيف
+و<kbd>+</kbd> لتكبير العرض من بعيد.</div>
+
+<h2 id="keys">١١ · الاختصارات</h2>
+<table>
+  <tr><th>المفتاح</th><th>الوظيفة</th></tr>
+  <tr><td><kbd>١</kbd> – <kbd>٩</kbd></td><td>التنقّل بين أقسام الدور الحاليّ</td></tr>
+  <tr><td><kbd>D</kbd></td><td>تشغيل / إيقاف العرض التلقائي</td></tr>
+  <tr><td><kbd>C</kbd></td><td>الوضع النظيف (إخفاء الأدوات للعرض)</td></tr>
+  <tr><td><kbd>S</kbd></td><td>كتم المؤثّرات الصوتيّة أو تشغيلها</td></tr>
+  <tr><td><kbd>M</kbd></td><td>إيقاف الحركة والرسوم المتحرّكة</td></tr>
+  <tr><td><kbd>+</kbd> / <kbd>−</kbd></td><td>تكبير العرض وتصغيره للقاعات الكبيرة</td></tr>
+  <tr><td><kbd>Esc</kbd></td><td>إغلاق النوافذ واللوحات</td></tr>
+</table>
+
+<h2 id="faq">١٢ · أسئلة شائعة</h2>
+<h3>هل يُرسَل نصّي إلى أيّ جهة؟</h3>
+<p>لا. المحرّك كلّه داخل المتصفّح، وعدد طلبات الشبكة أثناء التحليل <strong>صفر</strong>.
+يمكنك التحقّق بنفسك: افصل الإنترنت وجرّب — سيعمل كما هو.</p>
+
+<h3>أين تُحفَظ نقاطي؟</h3>
+<p>في متصفّح هذا الجهاز وحده (<span dir="ltr">localStorage</span>). إن استعملت جهازاً آخر أو متصفّحاً آخر
+أو مسحت بيانات المتصفّح، ستبدأ من جديد. ولهذا ننصح بتصدير سجلّ إنجازاتك من زرّ
+<strong>«⬇️ تصدير سجلّ إنجازاتي»</strong>.</p>
+
+<h3>هل يرصد مُبين كلّ خطأ ممكن؟</h3>
+<p>لا، ولا ندّعي ذلك. يرصد عشر عائلات محدّدة عبر بنوك قواعد مُعلَنة العدد (٥٠٤ مدخلاً).
+قوله «لا ملاحظات» يعني «لا ملاحظة وفق ما يرصده» لا «النصّ خالٍ من كلّ خطأ».
+وقسم «النطاق والحدود» داخل التطبيق يذكر هذا صراحةً.</p>
+
+<h3>لماذا لا أسمع المؤثّرات الصوتيّة؟</h3>
+<p>المتصفّحات تمنع الصوت قبل أوّل تفاعل من المستخدم. اضغط أيّ زرّ مرّة واحدة وسيعمل.
+وإن أردت كتمه فاضغط 🔊 في الشريط العلويّ أو <kbd>S</kbd>.</p>
+
+<h3>الحركة تزعجني أو تُبطئ جهازي — ماذا أفعل؟</h3>
+<p>اضغط <kbd>M</kbd> لإيقاف كلّ الحركة. ومُبين يحترم تلقائيّاً إعداد
+«تقليل الحركة» في نظام تشغيلك إن كان مُفعَّلاً.</p>
+
+<h3>هل أستطيع تعديل أوزان الأخطاء؟</h3>
+<p>نعم. من زرّ ⚙ في الشريط العلويّ، تضبط وزن كلّ عائلة في حساب «مؤشّر البيان».
+المدرسة تضبطها بما يناسب مرحلتها، وتُحفظ تلقائيّاً.</p>
+</main>
+</div>
+
+<footer>
+  مُبين · GEN CODE TEAM — غيث صادق · أحمد حمد · تيم عامر<br>
+  مدرسة السدرة الخاصة، كلباء — إمارة الشارقة · الهاكاثون الطلابي الأوّل «للعربية نبتكر»
+</footer>
+
+</body>
+</html>
