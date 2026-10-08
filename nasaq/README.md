@@ -26,7 +26,8 @@
 | `Nasaq-v2-Presentation.html` / `.pptx` | العرض التفاعلي ونسخة PowerPoint |
 | `Nasaq-v2-Poster-A2.pdf` / `.png` | بوستر A2 للطباعة |
 | `Nasaq-v2-Report.pdf` | التقرير التقني — 7 صفحات |
-| `Nasaq-v2-Speaking-Script.pdf` | نصّ الإلقاء و10 أسئلة متوقّعة |
+| `Nasaq-v2-Speaking-Script.pdf` | نصّ الإلقاء لثلاثة متحدّثين + 10 أسئلة متوقّعة |
+| `Nasaq-v2-Speaking-Script-Solo.pdf` | نصّ الإلقاء لمتحدّث واحد، مع سطر «اضغط» لكلّ مقطع |
 | `Nasaq-v2-Readiness-Plan.pdf` | قائمة الجاهزية للطباعة |
 | `Nasaq-v2-Import-Guide.pdf` | دليل استيراد بيانات المدرسة |
 | `Nasaq-v2-Measure-Sheet.pdf` | ورقة القياس — تفصيل الـ35 اختباراً |
