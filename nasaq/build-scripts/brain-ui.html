@@ -1,0 +1,15 @@
+  <div class="card" style="margin-top:14px;border:1px dashed rgba(251,191,36,.45)">
+    <h3 style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">🧠 عقل خارجي — Cloudflare Workers AI
+      <span id="brainState" style="font-size:12px;font-weight:800;padding:2px 10px;border-radius:99px;background:rgba(148,163,184,.18);color:#94A3B8">محلّي</span>
+    </h3>
+    <p class="sub">اختياري. الصق رابط «العقل» (Worker على Cloudflare) فتصير الإجابات من نموذج لغة حقيقي. اتركه فارغاً ويبقى المحرّك المحلّي يعمل دون إنترنت تماماً كما هو.</p>
+    <div class="row" style="margin-top:10px">
+      <input id="brainUrl" style="flex:1;direction:ltr;text-align:left" placeholder="https://nasaq-brain.<اسمك>.workers.dev  أو  /api/ask" onkeydown="if(event.key==='Enter')brainConnect()">
+      <button class="btn pri" onclick="brainConnect()">اختبر واربط</button>
+      <button class="btn" id="brainOff" style="display:none" onclick="brainDisconnect()">افصل</button>
+    </div>
+    <div id="brainMsg" style="font-size:13px;color:var(--tx2);margin-top:8px"></div>
+    <div class="honest" style="margin-top:12px">🔒 <b>الأمان:</b> الرابط يُحفظ في متصفّحك وحده، ولا يُكتب داخل الملفّ ولا يخرج مع أيّ تصدير. <b>لا تضع مفتاح API هنا إطلاقاً</b> — المفتاح يبقى داخل الـ Worker على Cloudflare ولا يراه أحد.<br>
+    👁️ <b>الخصوصية:</b> يُرسَل سؤالك ولقطة من الجدول بالأسماء <b>كما يعرضها مستوى الخصوصية الحالي</b>. اختر «رموز فقط» فتخرج بلا أسماء نهائياً. وبدور الطالب لا تخرج أسماء المعلّمين أصلاً.<br>
+    ⚠️ إن فشل الاتصال أو انقطع الإنترنت، يردّ المحرّك المحلّي فوراً بدل أن يتوقّف شيء.</div>
+  </div>

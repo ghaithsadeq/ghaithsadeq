@@ -1,0 +1,105 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>نَسَق — ربط عقل ذكاء اصطناعي</title>
+<style>
+@import url("fonts.css");
+@page{size:A4;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;color:#1E293B;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pg{width:210mm;height:297mm;padding:12mm 14mm 10mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden}
+.pg:last-child{page-break-after:auto}
+.hd{display:flex;justify-content:space-between;font-size:2.5mm;color:#64748B;letter-spacing:.2mm;padding-bottom:2.5mm;border-bottom:.3mm solid #E2E8F0}
+h1{font-size:7.4mm;font-weight:900;color:#0F172A;margin:4mm 0 1.6mm;text-align:left}
+.sub{font-size:3.1mm;color:#475569;text-align:left;margin-bottom:3mm;line-height:1.6}
+.sub b{color:#0F172A}
+h2{font-size:4.4mm;font-weight:900;color:#0F172A;margin:3.4mm 0 2mm;text-align:left}
+.st{display:flex;gap:3mm;margin-bottom:2.6mm;align-items:flex-start}
+.no{flex:none;width:7mm;height:7mm;border-radius:99mm;background:#FEF3C7;color:#92400E;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:3.4mm;display:grid;place-items:center}
+.sb{flex:1}
+.sb > b{display:block;font-size:3.5mm;font-weight:800;color:#0F172A;margin-bottom:.8mm}
+.sb p b{color:#0F172A;font-weight:800}
+.sb p{font-size:3.1mm;line-height:1.62;color:#334155}
+code{font-family:'IBM Plex Mono',monospace;font-size:2.9mm;background:#F1F5F9;border:.25mm solid #E2E8F0;border-radius:1.6mm;padding:.3mm 1.6mm;direction:ltr;display:inline-block}
+.path{font-family:'IBM Plex Mono',monospace;font-size:2.85mm;color:#0F766E;background:#F0FDFA;border-inline-start:.8mm solid #14B8A6;border-radius:0 2mm 2mm 0;padding:1.2mm 2.6mm;margin-top:1mm;direction:ltr;text-align:left}
+table{width:100%;border-collapse:collapse;font-size:3mm;margin-top:1.5mm}
+th,td{border:.25mm solid #E2E8F0;padding:1.6mm 2.4mm;text-align:right;vertical-align:top;line-height:1.55}
+th{background:#F8FAFC;font-weight:800;color:#0F172A}
+td b{color:#0F172A}
+.warn{border:.3mm solid #FDE084;background:#FFFBEB;border-radius:3mm;padding:2.4mm 3.4mm;font-size:3.05mm;line-height:1.65;color:#78350F;margin-top:2.6mm}
+.warn b{color:#431407}
+.ok{border:.3mm solid #A7F3D0;background:#F0FDF4;border-radius:3mm;padding:2.4mm 3.4mm;font-size:3.05mm;line-height:1.65;color:#065F46;margin-top:2.6mm}
+.ft{margin-top:auto;padding-top:3mm;border-top:.3mm solid #E2E8F0;display:flex;justify-content:space-between;align-items:center;font-size:2.5mm;color:#94A3B8}
+.ft .cr{font-weight:800;color:#64748B}
+</style></head><body>
+
+<div class="pg">
+<div class="hd"><span>GEN CODE TEAM</span><span>نَسَق — ربط عقل ذكاء اصطناعي (Cloudflare Workers AI)</span></div>
+<h1>ربط عقل ذكاء اصطناعي بـ«اسأل نَسَق»</h1>
+<div class="sub">تبويب «اسأل نَسَق» يعمل بمحرّك قواعد محلّي بلا إنترنت. هذه الورقة تضيف له <b>خياراً</b>: ربط نموذج لغة حقيقي على Cloudflare. <b>الربط اختياري تماماً</b> — إن تركت المربّع فارغاً أو انقطع الإنترنت، يردّ المحرّك المحلّي كما كان بالضبط.</div>
+
+<h2>لماذا Worker وسيط ولا نضع المفتاح في التطبيق؟</h2>
+<div class="sub" style="margin-bottom:2.4mm">لأنّ التطبيق ملفّ HTML يفتحه أيّ أحد ويقرأ مصدره. أيّ مفتاح بداخله يصبح مكشوفاً خلال دقائق. لذلك يبقى المفتاح داخل الـ Worker على خوادم Cloudflare، والتطبيق لا يعرف إلّا <b>الرابط</b>.</div>
+
+<h2>التركيب — أربع خطوات، بلا تثبيت أيّ برنامج</h2>
+
+<div class="st"><div class="no">1</div><div class="sb"><b>أنشئ Worker</b>
+<p>ادخل حسابك على Cloudflare، ثمّ من القائمة الجانبية:</p>
+<div class="path">Workers &amp; Pages → Create → Worker → اسمه: nasaq-brain → Deploy</div></div></div>
+
+<div class="st"><div class="no">2</div><div class="sb"><b>الصق الكود</b>
+<p>اضغط <code>Edit code</code>، امسح الكود الافتراضي كلّه، والصق محتوى ملفّ <code>Nasaq-Brain-Worker.js</code> المرفق، ثمّ <code>Deploy</code>.</p></div></div>
+
+<div class="st"><div class="no">3</div><div class="sb"><b>أضف ربط الذكاء الاصطناعي — هذه الخطوة هي المفتاح</b>
+<p>من صفحة الـ Worker نفسه:</p>
+<div class="path">Settings → Bindings → Add → Workers AI → Variable name: <b>AI</b> → Deploy</div>
+<p style="margin-top:1mm">الاسم <code>AI</code> بحروف كبيرة وبالضبط هكذا، وإلّا لن يعمل.</p></div></div>
+
+<div class="st"><div class="no">4</div><div class="sb"><b>الصق الرابط في التطبيق</b>
+<p>انسخ رابط الـ Worker، وافتح <code>Nasaq-App.html</code> ← تبويب <b>اسأل نَسَق</b> ← مربّع <b>عقل خارجي</b> ← الصق الرابط ← <b>اختبر واربط</b>.</p>
+<div class="path">https://nasaq-brain.&lt;اسم-حسابك&gt;.workers.dev</div>
+<p style="margin-top:1mm">تظهر شارة خضراء <b>متصل</b> ويردّ العقل بجملة اختبار. ولو فتحت الرابط نفسه في المتصفّح يجب أن ترى <code>{"ok":true, "ai_binding":true}</code>.</p></div></div>
+
+<div class="ok"><b>تحقّق سريع قبل أن تطمئنّ:</b> ① الرابط وحده في المتصفّح يرجع <code>ai_binding: true</code> — فإن رجع <code>false</code> فالخطوة ٣ ناقصة. ② في التطبيق تظهر شارة <b>متصل</b> خضراء. ③ اسأل سؤالاً فتظهر فوق الإجابة عبارة <b>عقل خارجي</b> لا <b>محرّك محلّي</b>.</div>
+
+<div class="warn"><b>اعرف هذا قبل العرض:</b> الرابط بلا كلمة سرّ — من يملكه يستهلك حصّتك المجانية. بعد رفع التطبيق على Cloudflare Pages، ضع متغيّراً باسم <code>ALLOWED_ORIGIN</code> قيمته نطاق موقعك (مثل <code>https://nasaq.pages.dev</code>) من <code>Settings → Variables</code>، فيرفض الـ Worker أيّ موقع آخر. وراقب الاستهلاك من صفحة <code>Workers AI</code>.</div>
+
+<div class="ft"><span>الخطوة ٣ هي أكثر ما يُنسى</span><span class="cr">إعداد وتقديم: غيث صادق كيوان</span><span>GEN CODE TEAM · كلباء</span></div>
+</div>
+
+<div class="pg">
+<div class="hd"><span>GEN CODE TEAM</span><span>نَسَق — ربط عقل ذكاء اصطناعي (Cloudflare Workers AI)</span></div>
+<h1>الخصوصية · رفع التطبيق · حلّ المشاكل</h1>
+
+<h2>ماذا يخرج من جهازك بالضبط؟</h2>
+<div class="sub" style="margin-bottom:0">يُرسَل سؤالك ولقطةٌ نصّية من الجدول الحالي. <b>الأسماء تخرج كما يعرضها مستوى الخصوصية المختار في التطبيق، لا كما هي في الذاكرة.</b> وهذا مقيسٌ فعلياً:</div>
+<table>
+<tr><th style="width:30%">مستوى الخصوصية</th><th style="width:22%">حجم ما يُرسَل</th><th>ما يراه العقل الخارجي</th></tr>
+<tr><td><b>الاسم الكامل</b></td><td>9,540 حرفاً</td><td>أسماء المعلّمين كاملة — باختيارك الصريح</td></tr>
+<tr><td><b>الاسم الأوّل</b> (الافتراضي)</td><td>7,724 حرفاً</td><td>الاسم الأوّل فقط، <b>بلا أيّ لقب عائلة</b></td></tr>
+<tr><td><b>رموز فقط</b></td><td>6,953 حرفاً</td><td><code>م-01</code>, <code>م-02</code> … <b>صفر أسماء</b></td></tr>
+<tr><td>أيّ مستوى + <b>دور الطالب</b></td><td>5,545 حرفاً</td><td>المواد فقط، <b>لا أسماء معلّمين إطلاقاً</b></td></tr>
+</table>
+<div class="sub" style="margin-top:2mm;margin-bottom:0">إن سألتك اللجنة عن الخصوصية: اختر «رموز فقط» أمامهم، واسأل سؤالاً، وأرِهم أنّ الجواب يأتي بالرموز. والرابط لا يُحفَظ إلّا في متصفّحك — لا يُكتب داخل الملفّ ولا يخرج مع أيّ تصدير.</div>
+
+<h2>رفع التطبيق على Cloudflare Pages</h2>
+<div class="st"><div class="no">A</div><div class="sb"><b>الموقع</b>
+<p>ضع <code>Nasaq-App.html</code> في مجلّد باسم <code>public</code> وسمِّه <code>index.html</code>، ثمّ:</p>
+<div class="path">Workers &amp; Pages → Create → Pages → Upload assets → ارفع المجلّد → Deploy</div></div></div>
+<div class="st"><div class="no">B</div><div class="sb"><b>العقل بنفس النطاق — أنظف وأأمن</b>
+<p>بدل Worker منفصل، أنشئ داخل المجلّد المسار <code>functions/api/ask.js</code> وضع فيه <b>نفس</b> ملفّ <code>Nasaq-Brain-Worker.js</code> (الملفّ يصدّر الصيغتين معاً). أضف ربط Workers AI باسم <code>AI</code> من إعدادات مشروع Pages، ثمّ اكتب في مربّع العقل داخل التطبيق:</p>
+<div class="path">/api/ask</div>
+<p style="margin-top:1mm">هكذا لا توجد مشكلة CORS أصلاً، ولا يستطيع موقع آخر استخدام عقلك.</p></div></div>
+
+<h2>إذا لم يعمل</h2>
+<table>
+<tr><th style="width:38%">ما تراه</th><th>السبب والحلّ</th></tr>
+<tr><td><b>«ربط Workers AI غير موجود»</b></td><td>الخطوة ٣ لم تُنفَّذ، أو اسم المتغيّر ليس <code>AI</code> بالضبط. أعِدها ثمّ <code>Deploy</code> مرّة أخرى.</td></tr>
+<tr><td><b>«فشل الاتصال» وأنت تفتح الملفّ من جهازك</b></td><td>يحدث أحياناً مع ملفّ محلّي <code>file://</code>. ارفع التطبيق على Pages واستخدم <code>/api/ask</code>، أو اترك <code>ALLOWED_ORIGIN</code> فارغاً أثناء التجربة.</td></tr>
+<tr><td><b>HTTP 429 أو «تعذّر تشغيل النموذج»</b></td><td>تجاوزت الحصّة المجانية اليومية لـ Workers AI. انتظر إعادة الضبط أو بدّل الموديل من متغيّر <code>MODEL</code>.</td></tr>
+<tr><td><b>الإجابة تأتي بـ «محرّك محلّي»</b></td><td>العقل فشل والتطبيق رجع تلقائياً للمحرّك المحلّي. افتح رابط الـ Worker في المتصفّح لترى رسالة الخطأ الحقيقية.</td></tr>
+</table>
+
+<div class="warn"><b>قل هذا للّجنة بوضوح:</b> المحرّك المحلّي هو الأساس، والعقل الخارجي <b>إضافة اختيارية</b>. التطبيق يعمل كاملاً بلا إنترنت ودون أيّ اشتراك، والعقل <b>لا يولّد الجدول ولا يغيّره</b> — هو يقرأ الجدول ويشرحه فقط. التوليد ومنع التعارضات يبقيان من المحرّك المحلّي وحده.</div>
+
+<div class="ft"><span>الموديل الافتراضي: @cf/meta/llama-3.1-8b-instruct</span><span class="cr">إعداد وتقديم: غيث صادق كيوان</span><span>GEN CODE TEAM · كلباء</span></div>
+</div>
+</body></html>
