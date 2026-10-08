@@ -1,0 +1,129 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>نَسَق v2 — بوستر A2</title>
+<style>
+@import url("fonts.css");
+@page{size:420mm 594mm;margin:0}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:420mm;height:594mm}
+body{font-family:'Tajawal',sans-serif;color:#EAF0FA;
+ background:radial-gradient(520mm 260mm at 88% -6%,rgba(251,191,36,.14),transparent 62%),
+            radial-gradient(460mm 260mm at -8% 104%,rgba(45,212,191,.12),transparent 62%),#060A14;
+ padding:16mm 16mm 10mm;display:flex;flex-direction:column;gap:6mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.mono{font-family:'IBM Plex Mono',monospace}
+/* header */
+header{display:flex;align-items:center;gap:7mm}
+.mk{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4mm;padding:3mm;border-radius:7mm;
+    background:linear-gradient(135deg,#FBBF24,#2DD4BF);width:30mm;height:30mm;flex:none}
+.mk i{background:#0A1020;border-radius:1mm}.mk i:nth-child(2n){opacity:.55}
+h1{font-size:26mm;font-weight:900;line-height:.95;letter-spacing:-.5mm}
+.v2{display:inline-block;vertical-align:middle;font-size:9mm;font-weight:900;padding:1mm 4mm;
+    border-radius:3mm;background:#FBBF24;color:#1A1203;margin-inline-start:4mm;transform:translateY(-6mm)}
+.tag{font-size:8.4mm;font-weight:800;color:#F7E9C2;margin-top:1mm}
+.who{font-size:4.6mm;color:#93A3BF;margin-top:2mm}
+.who b{color:#FBBF24}
+/* sections */
+.sec{display:flex;align-items:center;gap:3mm;margin-top:1mm}
+.sec .n{font-family:'IBM Plex Mono',monospace;font-size:4.4mm;color:#64748B;font-weight:600}
+.sec h2{font-size:7mm;font-weight:900}
+.sec .ln{flex:1;height:.4mm;background:linear-gradient(90deg,rgba(251,191,36,.5),transparent)}
+.card{background:rgba(255,255,255,.045);border:.4mm solid rgba(255,255,255,.11);border-radius:5mm;padding:5mm}
+.row{display:grid;gap:4mm}
+.c4{grid-template-columns:repeat(4,1fr)}.c3{grid-template-columns:repeat(3,1fr)}
+.c2{grid-template-columns:1fr 1fr}.c5{grid-template-columns:repeat(5,1fr)}
+.stat{text-align:center}
+.stat b{display:block;font-family:'IBM Plex Mono',monospace;font-size:13mm;line-height:1.05;font-weight:600}
+.stat span{font-size:4mm;color:#93A3BF}
+.am{color:#FBBF24}.tl{color:#2DD4BF}.ok{color:#34D399}.sky{color:#38BDF8}.vi{color:#C4B5FD}
+.feat b{display:block;font-size:5.6mm;font-weight:900;margin-bottom:1.5mm}
+.feat b em{font-style:normal;margin-inline-end:2mm}
+.feat p{font-size:3.9mm;line-height:1.65;color:#B8C4D9}
+.shot{border-radius:4mm;overflow:hidden;border:.4mm solid rgba(255,255,255,.12);background:#0B1220}
+.shot img{width:100%;display:block}
+.cap{font-size:3.5mm;color:#8FA0BC;margin-top:1.5mm;text-align:center}
+.lead{font-size:4.6mm;line-height:1.75;color:#C9D3E3}
+.lead b{color:#FBBF24}
+.pill{display:inline-block;font-size:3.6mm;font-weight:800;padding:1mm 3mm;border-radius:99mm;
+      background:rgba(45,212,191,.14);color:#7FE6D6;border:.3mm solid rgba(45,212,191,.35);margin-inline-end:2mm}
+.pill.h{background:rgba(251,191,36,.14);color:#F7D794;border-color:rgba(251,191,36,.38)}
+code{font-family:'IBM Plex Mono',monospace;font-size:4.2mm;color:#FBBF24;background:rgba(251,191,36,.08);
+     border:.3mm dashed rgba(251,191,36,.3);border-radius:2.5mm;padding:2.5mm 4mm;display:block;text-align:center;direction:ltr}
+.note{border:.4mm dashed rgba(251,191,36,.45);background:rgba(251,191,36,.06);border-radius:4mm;
+      padding:4mm 5mm;font-size:4.1mm;line-height:1.7;color:#F3DFA6}
+footer{margin-top:auto;padding-top:4mm;border-top:.4mm solid rgba(255,255,255,.12);
+        display:flex;justify-content:space-between;align-items:center;font-size:3.8mm;color:#7F8CA4}
+footer b{color:#FBBF24;font-size:4.4mm}
+.nat{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;font-size:3.9mm;line-height:1.6;color:#C9D3E3}
+.nat b{display:block;font-size:4.6mm;color:#EAF0FA;margin-bottom:1mm}
+</style></head><body>
+
+<header>
+  <div class="mk"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div style="flex:1">
+    <h1>نَسَق<span class="v2">v2</span></h1>
+    <div class="tag">جدولٌ مدرسيّ كامل في ثوانٍ… بلا تعارضٍ واحد</div>
+    <div class="who">مولّد الجداول المدرسية الذكي · مسابقة واجهة كلباء · إعداد وتقديم: <b>غيث صادق كيوان</b> · GEN CODE TEAM · مدرسة السدرة الخاصة — كلباء</div>
+  </div>
+</header>
+
+<div class="sec"><span class="n">01</span><h2>المشكلة</h2><div class="ln"></div></div>
+<div class="row c4">
+  <div class="card stat"><b class="am">240</b><span>حصّة أسبوعياً</span></div>
+  <div class="card stat"><b class="sky">13</b><span>معلّماً</span></div>
+  <div class="card stat"><b class="tl">8</b><span>صفوف</span></div>
+  <div class="card stat"><b class="vi">3</b><span>قاعات مشتركة</span></div>
+</div>
+<div class="card lead">ترتيب الجدول يدوياً يستغرق أياماً: معلّم في صفّين، قاعة محجوزة مرّتين، رياضة في ذروة الظهيرة، وغياب مفاجئ كلّ صباح. <b>كلّ خطأ صغير يُعاد معه الجدول من أوّله.</b></div>
+
+<div class="sec"><span class="n">02</span><h2>الحلّ: ذكاء اصطناعي يبحث ويحسّن</h2><div class="ln"></div></div>
+<div class="row c2">
+  <div class="card">
+    <div class="feat"><b>التلدين المحاكى (Simulated Annealing)</b>
+    <p>400,000 محاولة تبديل. كلّ تعارضٍ صلب = ١٠٠ نقطة، والتفضيلات المرنة لها أوزان. يقبل البرنامج أحياناً خطوةً أسوأ ليهرب من الحلول المحلّية، ثمّ «يبرّد» حتى أفضل جدول.</p></div>
+    <div style="margin-top:3mm"><span class="pill h">صلب: لا معلّم في صفّين</span><span class="pill h">سعة القاعات</span><span class="pill h">عدم التوفّر</span>
+    <span class="pill">مرن: الرياضيات صباحاً</span><span class="pill">الرياضة قبل الحصّ</span><span class="pill">تجميع القاعات</span></div>
+    <code>score = 40·spec + 25·light + 20·fair + 15·knows</code>
+  </div>
+  <div>
+    <div class="shot"><img src="img/deck-03.jpeg"></div>
+    <div class="cap">الجدول المولَّد — التعارضات صفر، والحصص المثبّتة محدّدة بإطارٍ متقطّع</div>
+  </div>
+</div>
+
+<div class="sec"><span class="n">03</span><h2>الجديد في الإصدار الثاني — كلّ ميزةٍ جوابٌ لسؤال محكّم</h2><div class="ln"></div></div>
+<div class="row c4">
+  <div class="card feat"><b><em>📥</em>استيراد من Excel</b><p>«هل يعمل على مدرستي ببياناتها؟» — الصق من Excel أو ارفع CSV. سبعة فحوص تردّ <b style="color:#FBBF24">رقم السطر والسبب بالعربي</b>، لا كلمة «خطأ» فقط.</p></div>
+  <div class="card feat"><b><em>📌</em>تثبيت الحصص</b><p>«عندنا حصص لا تتحرّك.» — الحصّة المثبّتة <b style="color:#FBBF24">مستثناة من حركات البحث داخل الخوارزمية نفسها</b>، لا تصحيحاً بعد التوليد.</p></div>
+  <div class="card feat"><b><em>👨‍👩‍👧</em>صفحة الأسرة</b><p>«كيف يصل الجدول للأهالي؟» — صفحة بنقرة واحدة، <b style="color:#FBBF24">ولا تُظهر الاسم الكامل أبداً</b> حتى لو اختير داخل التطبيق.</p></div>
+  <div class="card feat"><b><em>🧪</em>٣٥ اختباراً آلياً</b><p>«كيف نصدّق أرقامكم؟» — زرٌّ واحد أمام اللجنة. <b style="color:#FBBF24">دالة مستقلّة تعدّ التعارضات من الصفر</b> وتقارنها بحساب المحرّك.</p></div>
+</div>
+
+<div class="sec"><span class="n">04</span><h2>النتائج المقاسة — تشغيلٌ فعليّ، لا تقدير</h2><div class="ln"></div></div>
+<div class="row c5">
+  <div class="card stat"><b class="ok">35/35</b><span>اختبار آلي ناجح</span></div>
+  <div class="card stat"><b class="sky">1.38<span style="font-size:6mm">ث</span></b><span>متوسّط التوليد (٣ عمليات)</span></div>
+  <div class="card stat"><b class="am">0</b><span>تعارض صلب — بفحص مستقلّ</span></div>
+  <div class="card stat"><b class="tl">3.4<span style="font-size:6mm">ms</span></b><span>تغطية غياب يومٍ كامل</span></div>
+  <div class="card stat"><b class="vi">5.02:1</b><span>أقلّ تباين ألوان (المعيار 4.5)</span></div>
+</div>
+
+<div class="sec"><span class="n">05</span><h2>تحقّقوا بأنفسكم — ثلاث خطوات أمامكم</h2><div class="ln"></div></div>
+<div class="row c3">
+  <div><div class="shot"><img src="img/deck-01.jpeg"></div><div class="cap">١ — الصقوا بيانات أيّ مدرسة؛ يُعرض رقم السطر والسبب</div></div>
+  <div><div class="shot"><img src="img/deck-05.jpeg"></div><div class="cap">٢ — اضغطوا «شغّل الاختبارات» وشاهدوا ٣٥ نتيجة تُقاس الآن</div></div>
+  <div><div class="shot"><img src="img/deck-04.jpeg"></div><div class="cap">٣ — افتحوا صفحة الأسرة؛ لا اسم كامل فيها</div></div>
+</div>
+
+<div class="sec"><span class="n">06</span><h2>المواءمة الوطنية والشفافية</h2><div class="ln"></div></div>
+<div class="card nat">
+  <div><b>🇦🇪 استراتيجية الذكاء الاصطناعي ٢٠٣١</b>خوارزمية تحلّ مسألة معقّدة فعلياً، لا واجهة فقط.</div>
+  <div><b>📄 تصفير البيروقراطية</b>بلا أوراق ولا اتصالات: الجدول يصل الأسرة بنقرة.</div>
+  <div><b>🔒 الخصوصية والثقة الرقمية</b>٣ مستويات للأسماء، وصفر بيانات تُرسَل للخارج، وسجلّ وصولٍ حيّ.</div>
+  <div><b>🌿 الاستدامة وعام المجتمع</b>تكييف أقلّ وعدالة في توزيع الأعباء بين المعلّمين.</div>
+</div>
+<div class="note"><b>بصراحةٍ أمام اللجنة:</b> نموذج أوّليّ يعمل · كلّ البيانات والأسماء افتراضية ولا تخصّ أيّ شخص · أرقام الطاقة تقديرية بافتراضاتٍ معلنة · <b>لم تُستورَد بعد بيانات مدرسةٍ حقيقية</b>، وما جُرِّب هو مدرسة افتراضية مختلفة الحجم لإثبات أنّ المحرّك غير مرتبطٍ ببيانات العرض · القياسات على جهازٍ واحد وبهذا الحجم من البيانات.</div>
+
+<footer>
+  <span>نموذج أوّليّ يعمل · كلّ الملفّات تعمل دون إنترنت · الخطوط مضمّنة</span>
+  <span><b>إعداد وتقديم: غيث صادق كيوان</b> · GEN CODE TEAM · مدرسة السدرة الخاصة — كلباء · 2026</span>
+</footer>
+</body></html>
